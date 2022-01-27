@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>courses</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+       
+
+        font-family: sans-serif;
+        word-wrap: break-word;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+   
+
+      header {
+        color: #48487f;
+        height: 10%;
+
+        width: 100%;
+        box-shadow: 0px 0px 10px;
+        display: flex;
+
+        position: fixed;
+        top: 0;
+        z-index: 4;
+        background: white;
+        align-items: center;
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-right: 2%;
+      }
+
+      header ul {
+        display: flex;
+        list-style: none;
+        height: fit-content;
+        font-size: 20px;
+        height: fit-content;
+      }
+
+      header a {
+        text-decoration: none;
+        color: #48487f;
+      }
+
+      .logo {
+        width: 50%;
+        display: flex;
+        font-size: 30px;
+        height: fit-content;
+      }
+      .u {
+        width: 60%;
+        justify-content: space-between;
+      }
+      .u li {
+        width: fit-content;
+        font-size: 17px;
+      }
+      .u a:hover {
+        color: rgb(48, 194, 73);
+      }
+      *{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background-image:url('https://source.unsplash.com/random?coding');
+   
+    animation: chang 20s infinite alternate;
+}
+@keyframes chang {
+    0%{
+                background-image:url('https://source.unsplash.com/random?c++');
+        
+
+            }
+            15%{
+                background-image:url('https://source.unsplash.com/random?c++');
+        
+
+            }
+            30%{
+                background-image:url('https://source.unsplash.com/random?c++');
+        
+
+            }
+            45%{
+                background-image:url('https://source.unsplash.com/random?c++');
+        
+
+            }
+            60%{
+                background-image:url('https://source.unsplash.com/random?c++');
+        
+
+            }
+            75%{
+                background-image:url('https://source.unsplash.com/random?nature');
+       
+
+            }
+            90%{
+                background-image:url('https://source.unsplash.com/random?computer');
+ 
+
+            }
+            100%{
+                background-image:url('https://source.unsplash.com/random?coding');
+       
+            }
+
+
+        }
+        .for{
+            
+            width: 60%;
+            height: 80vh;
+            margin: 20px auto;
+            font-size: 2.2vw;
+            color: white;
+            box-shadow: 0px 0px 20px white;
+            background-color: #7c7878;
+            z-index: 2;
+            padding: 5%;
+           font-weight:bolder;
+        }
+        .b{
+          background:url('https://source.unsplash.com/random?coding');
+          background-size: cover;
+          background-clip: text;
+          font-size: 2.2vw;
+          color:transparent ;
+          -webkit-background-clip: text;
+          animation: bg 2s infinite linear alternate;
+        }
+        @keyframes bg {
+    0%{
+                background-image:url('https://source.unsplash.com/random?c++');
+                background-clip: text;
+          -webkit-background-clip: text;
+
+            }
+            15%{
+                background-image:url('https://source.unsplash.com/random?c++');
+                background-clip: text;
+              -webkit-background-clip: text;
+
+            }
+            30%{
+                background-image:url('https://source.unsplash.com/random?c++');
+                background-clip: text;
+          -webkit-background-clip: text;
+
+            }
+            45%{
+                background-image:url('https://source.unsplash.com/random?c++');
+                background-clip: text;
+          -webkit-background-clip: text;
+
+            }
+            60%{
+                background-image:url('https://source.unsplash.com/random?c++');
+                background-clip: text;
+          -webkit-background-clip: text;
+
+            }
+            75%{
+                background-image:url('https://source.unsplash.com/random?nature');
+                background-clip: text;
+          -webkit-background-clip: text;
+
+            }
+            90%{
+                background-image:url('https://source.unsplash.com/random?computer');
+                background-clip: text;
+          -webkit-background-clip: text;
+
+            }
+            100%{
+                background-image:url('https://source.unsplash.com/random?coding');
+                background-clip: text;
+          -webkit-background-clip: text;
+            }
+
+
+        }
+        label,input{
+          height: fit-content;
+        }
+        .loading{
+            position:absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0px;
+            left:0px;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3vw;
+           
+            color:white;
+          animation: load 1s;
+          animation-fill-mode: forwards;
+         animation-delay: 8s;
+
+            background: rgba(0, 0, 0, 0.575);
+        }
+        @keyframes load {
+           
+            100%{
+     visibility: hidden;
+            }
+        }
+        .rotatex {
+        transform: translateY(6px) rotateZ(45deg);
+      }
+
+      .rotatey {
+        transform: translateY(-6px) rotateZ(-45deg);
+      }
+
+      .invisible {
+        opacity: 0;
+      }
+
+      .dis {
+        width: 40%;
+        height: 100vh;
+      }
+      .hamburger {
+        width: 4%;
+        height: 22%;
+        display: none;
+        margin-left: 3%;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
+      .hamburger div {
+        background-color: #48487f;
+        width: 150%;
+        transition: all 500ms;
+        height: 2px;
+      }
+      @media only screen and (max-width: 1000px) {
+        .hamburger {
+          display: flex;
+        }
+        header ul {
+          display: none;
+        }
+        .logo {
+          margin-left: 40px;
+          width: 70%;
+        }
+
+        #ul li {
+          width: fit-content;
+        }
+      }
+      a {
+        color: #48487f;
+        text-decoration: none;
+      }
+      .notul {
+        color: #48487f;
+        font-size: 20px;
+        font-weight: lighter;
+        margin: auto;
+        margin-top: 110px;
+        display: flex;
+        flex-direction: column;
+        width: 0px;
+        overflow: hidden;
+        height: 300px;
+        transition: all 200ms;
+      }
+      @media only screen and (max-width: 600px) {
+        .hamburger {
+          display: flex;
+        }
+        header ul {
+          display: none;
+        }
+        #ul li {
+          width: fit-content;
+        }
+        .logo {
+          margin-left: 40px;
+          width: 50%;
+          font-size: 17px;
+        }
+      }
+      ul {
+        list-style: none;
+      }
+      .notdis {
+        width: 0%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+    style="
+      background: white;
+      z-index: 1;
+      position: fixed;
+      top: 0px;
+      left: 0;
+      box-shadow: 0px 0px 5px;
+      transition: all 400ms;
+    "
+    id="side"
+    class="notdis"
+  >
+    <ul
+      id="ul"
+      class="notul"
+      style="width: 100%; margin-top: 80%; height: fit-content"
+    >
+      <li >
+        <a href="index.html">Home</a>
+      </li>
+      <li style="margin-top: 50px"><a href="Courses.html">Courses</a></li>
+      <li style="margin-top: 50px"><a href="services.html">Services</a></li>
+      <li style="margin-top: 50px;background-color: #afafaf65; border-radius: 5px">
+        <a href="#">Register Online</a>
+      </li>
+      <li ><a href="about.html">About Us</a></li>
+    </ul>
+  </div>
+    <div class="loading">Loading...</div>
+    <header>
+      <div class="hamburger">
+        <div class="oneline"></div>
+        <div class="twoline"></div>
+        <div class="threeline"></div>
+      </div>
+
+      <div class="logo">
+        <p>Batra Computer Center</p>
+      </div>
+      <ul class="u">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Courses.html">Courses</a></li>
+        <li ><a href="services.html">Services</a></li>
+        <li style="background-color: #afafaf65;border-radius: 5px;"><a href="#">Register Online</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </header>
+    <br><br><br>
+    <form class="for">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"><span class="b">Name</span></label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text" style="color:black">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"><span class="b">Email address</span></label>
+        <input type="email" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"><span class="b">Type your message</span></label>
+          <textarea style="width: 100%;font-size: 20px;"></textarea>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1" style="color: black;">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const hamburger = document.getElementsByClassName("hamburger")[0];
+      const side = document.getElementById("side");
+      const ul = document.getElementById("ul");
+      let i = 0;
+      const one = document.getElementsByClassName("oneline")[0];
+      const three = document.getElementsByClassName("threeline")[0];
+      const two = document.getElementsByClassName("twoline")[0];
+      hamburger.addEventListener("click", () => {
+        one.classList.toggle("rotatex");
+        two.classList.toggle("invisible");
+        three.classList.toggle("rotatey");
+
+        if (i % 2 == 0) {
+          side.classList.remove("notdis");
+          side.classList.add("dis");
+          ul.classList.add("none");
+          ul.classList.remove("notul");
+        } else {
+          side.classList.remove("dis");
+          side.classList.add("notdis");
+          ul.classList.remove("none");
+          ul.classList.add("notul");
+        }
+        i++;
+      });
+    </script>
+  </body>
+</html>

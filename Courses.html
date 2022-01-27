@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>courses</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+
+        font-family: sans-serif;
+        word-wrap: break-word;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      header {
+        color: #48487f;
+        height: 10%;
+
+        width: 100%;
+        box-shadow: 0px 0px 10px;
+        display: flex;
+
+        position: fixed;
+        top: 0;
+        z-index: 4;
+        background: white;
+        align-items: center;
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-right: 2%;
+      }
+
+      header ul {
+        display: flex;
+        list-style: none;
+        height: fit-content;
+        font-size: 20px;
+        height: fit-content;
+      }
+p,h5{
+    height: fit-content;
+}
+      header a {
+        text-decoration: none;
+        color: #48487f;
+      }
+
+      .logo {
+        width: 50%;
+        display: flex;
+        font-size: 30px;
+        height: fit-content;
+      }
+      .u {
+        width: 60%;
+        justify-content: space-between;
+      }
+      .u li {
+        width: fit-content;
+        font-size: 17px;
+       
+      }
+      .u a:hover {
+        color: rgb(48, 194, 73);
+      }
+      .cards {
+            
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+           overflow: hidden;
+           flex-wrap: wrap;
+          height: 240%;
+          color: black;
+            padding: 4%;
+
+        }
+
+        .card {
+            margin-bottom: 5%;
+            width: 200px;
+            height: 300px;
+            margin-left: 3%;
+            border: 1px solid;
+            overflow: hidden;
+            display: inline-block;
+            transition: all 1s;
+
+
+        }
+
+        .card:hover {
+            transform: scale(1.15);
+            box-shadow: 10px 10px 50px;
+        }
+
+        .card img {
+
+            height: 40%;
+            display: inline-block;
+            
+           
+
+        }
+
+     
+
+        .carousel {
+
+            box-shadow: 10px 5px 20px rgb(15, 214, 32);
+            height: 60%;
+            width: 90%;
+            margin: auto;
+           
+            background-size: cover;
+            overflow: hidden;
+        }
+        .carousel-inner{
+            height: 100%;
+            width: 100%;
+        }
+        .carousel-item{
+            height: 100%;
+            width: 100%;
+        }
+        .carousel-item img{
+            height: 100%;
+            width: 100%;
+        }
+        h1{
+            animation:change 2s infinite;
+            background-image:url('https://source.unsplash.com/random?hackathons');
+            background-clip:text;
+                -webkit-background-clip: text;
+
+        }
+        @keyframes change {
+            30%{
+                background-image:url('https://source.unsplash.com/random?c++');
+            background-clip:text;
+                -webkit-background-clip: text;
+
+            }
+            50%{
+                background-image:url('https://source.unsplash.com/random?nature');
+            background-clip:text;
+                -webkit-background-clip: text;
+
+            }
+            80%{
+                background-image:url('https://source.unsplash.com/random?computer');
+            background-clip:text;
+                -webkit-background-clip: text;
+
+            }
+            100%{
+                background-image:url('https://source.unsplash.com/random?coding');
+            background-clip:text;
+                -webkit-background-clip: text;
+
+            }
+
+        }
+        .loading{
+            position:absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0px;
+            overflow: hidden;
+            left:0px;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3vw;
+            color:white;
+          animation: load 1s;
+          animation-fill-mode: forwards;
+         animation-delay: 5s;
+            background: rgba(65, 60, 60, 0.747);
+        }
+        @keyframes load {
+           
+            100%{
+     visibility: hidden;
+            }
+        }
+        .rotatex {
+        transform: translateY(6px) rotateZ(45deg);
+      }
+
+      .rotatey {
+        transform: translateY(-6px) rotateZ(-45deg);
+      }
+
+      .invisible {
+        opacity: 0;
+      }
+
+      .dis {
+        width: 40%;
+        height: 100vh;
+      }
+      .hamburger {
+        width: 4%;
+        height: 22%;
+        display: none;
+        margin-left: 3%;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
+      .hamburger div {
+        background-color: #48487f;
+        width: 150%;
+        transition: all 500ms;
+        height: 2px;
+      }
+      @media only screen and (max-width: 1000px) {
+        .hamburger {
+          display: flex;
+        }
+        header ul {
+          display: none;
+        }
+        .logo {
+          margin-left: 40px;
+          width: 70%;
+        }
+
+        #ul li {
+          width: fit-content;
+        }
+      }
+      a {
+        color: #48487f;
+        text-decoration: none;
+      }
+      .notul {
+        color: #48487f;
+        font-size: 20px;
+        font-weight: lighter;
+        margin: auto;
+        margin-top: 110px;
+        display: flex;
+        flex-direction: column;
+        width: 0px;
+        overflow: hidden;
+        height: 300px;
+        transition: all 200ms;
+      }
+      @media only screen and (max-width: 600px) {
+        .hamburger {
+          display: flex;
+        }
+        header ul {
+          display: none;
+        }
+        #ul li {
+          width: fit-content;
+        }
+        .logo {
+          margin-left: 40px;
+          width: 50%;
+          font-size: 17px;
+        }
+      }
+      ul {
+        list-style: none;
+      }
+      .notdis {
+        width: 0%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+    style="
+      background: white;
+      z-index: 1;
+      position: fixed;
+      top: 0px;
+      left: 0;
+      box-shadow: 0px 0px 5px;
+      transition: all 400ms;
+    "
+    id="side"
+    class="notdis"
+  >
+    <ul
+      id="ul"
+      class="notul"
+      style="width: 100%; margin-top: 80%; height: fit-content"
+    >
+      <li >
+        <a href="index.html">Home</a>
+      </li>
+      <li style="margin-top: 50px"><a href="Courses.html">Courses</a></li>
+      <li style="margin-top: 50px"><a href="services.html">Services</a></li>
+      <li style="margin-top: 50px;background-color: #afafaf65; border-radius: 5px">
+        <a href="#">Register Online</a>
+      </li>
+      <li ><a href="about.html">About Us</a></li>
+    </ul>
+  </div>
+    <div class="loading">Loading......</div>
+    <header>
+        <div class="hamburger">
+            <div class="oneline"></div>
+            <div class="twoline"></div>
+            <div class="threeline"></div>
+          </div>
+      <div class="logo">
+        <p>Batra Computer Center</p>
+      </div>
+      <ul class="u">
+        <li><a href="index.html">Home</a></li>
+        <li style="background-color: #afafaf65;border-radius: 5px;"><a 
+            href="#">Courses</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="form.html">Register Online</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </header><br><br><br><br>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://source.unsplash.com/random/?coding" class="d-block w-100" alt="..."
+                    >
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/random?hackathons" class="d-block w-10" alt="..."
+                   >
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/random?cpu" class="d-block w-100" alt="..." >
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/random?javascript" class="d-block w-100" alt="..."
+                    >
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/random?c++" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+  <h1 style="text-align: center;color:transparent;font-size: 80px;font-weight: bolder; font-family: sans-serif;margin-top: 5%;height: fit-content;">Courses</h1>
+    <div class="cards">
+        <div class="card" data-num="1">
+            <img src="https://source.unsplash.com/random?npm" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" data-num="2">
+            <img src="https://source.unsplash.com/random?php" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" data-num="3">
+            <img src="https://source.unsplash.com/random?java" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" data-num="4">
+            <img src="https://source.unsplash.com/random?android" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" data-num="5">
+            <img src="https://source.unsplash.com/random?android" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" data-num="6">
+            <img src="https://source.unsplash.com/random?npm" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text" >Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" data-num="7">
+            <img src="https://source.unsplash.com/random?php" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" data-num="8">
+            <img src="https://source.unsplash.com/random?java" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" data-num="9">
+            <img src="https://source.unsplash.com/random?android" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" data-num="10">
+            <img src="https://source.unsplash.com/random?php" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" data-num="11">
+            <img src="https://source.unsplash.com/random?php" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" data-num="12">
+            <img src="https://source.unsplash.com/random?android" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+    </div>
+     
+
+
+
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    >
+
+
+
+
+</script>
+<script>
+const body=document.querySelector('body');
+body.style.overflow="hidden";
+setTimeout(() => {
+    body.style.overflow="visible";
+}, 6000);
+const cards=document.getElementsByClassName('card');
+const hamburger = document.getElementsByClassName("hamburger")[0];
+      const side = document.getElementById("side");
+      const ul = document.getElementById("ul");
+      let i = 0;
+      const one = document.getElementsByClassName("oneline")[0];
+      const three = document.getElementsByClassName("threeline")[0];
+      const two = document.getElementsByClassName("twoline")[0];
+
+for (let index = 0; index < 12; index++) {
+    const element =cards[index];
+    element.addEventListener('click',()=>{
+        let num=element.dataset.num;
+        window.location.href=`course${num}.html`;
+    })
+}
+// window.location.href=`course${1}.html`;
+hamburger.addEventListener("click", () => {
+        one.classList.toggle("rotatex");
+        two.classList.toggle("invisible");
+        three.classList.toggle("rotatey");
+
+        if (i % 2 == 0) {
+          side.classList.remove("notdis");
+          side.classList.add("dis");
+          ul.classList.add("none");
+          ul.classList.remove("notul");
+        } else {
+          side.classList.remove("dis");
+          side.classList.add("notdis");
+          ul.classList.remove("none");
+          ul.classList.add("notul");
+        }
+        i++;
+      });
+
+</script>
+  </body>
+</html>

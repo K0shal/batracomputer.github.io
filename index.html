@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+
+        font-family: sans-serif;
+        word-wrap: break-word;
+      }
+
+      html {
+        scroll-behavior: smooth;
+       
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+       
+      }
+
+      header {
+        color: #48487f;
+        height: 10%;
+       
+        width: 100%;
+        box-shadow: 0px 0px 10px;
+        display: flex;
+    
+        position: fixed;
+        top: 0;
+        z-index: 4;
+        background: white;
+        align-items: center;
+        padding-left: 5%;
+        padding-right: 2%;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+
+        height: fit-content;
+        font-size: 20px;
+        width: 50%;
+        height: fit-content;
+      }
+
+      .hamburger {
+        width: 2%;
+        height: 21%;
+    display: none;
+       
+        justify-content: space-between;
+
+        flex-direction: column;
+      }
+
+      .hamburger div {
+        background-color: #48487f;
+        width: 150%;
+        transition: all 500ms;
+        height: 2px;
+      }
+
+      .logo {
+        width: 40%;
+        display: flex;
+        font-size: 30px;
+        height: fit-content;
+      }
+
+      .section1 {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 7%;
+        
+        justify-content: space-evenly;
+      }
+
+      .section1 h1 {
+        width: 100%;
+        font-size: 70px;
+        display: inline-block;
+        color: #48487f;
+
+        height: fit-content;
+      }
+
+      .section1 p {
+        height: fit-content;
+        width: fit-content;
+        font-weight: lighter;
+        color: rgb(48, 48, 48);
+      }
+
+      .section1 button {
+        height: 28%;
+        color: white;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        width: 18%;
+        background-color: #48487f;
+      }
+
+      .bgimage {
+        height: 80%;
+        width: 80%;
+        margin: auto;
+        background: url("bgimage.jpg");
+      }
+
+      .updates {
+        height: 210%;
+        width: 90%;
+       
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: auto;
+        gap: 7px;
+        align-items: center;
+      }
+
+      .updates .one {
+        height: 30%;
+      
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+      }
+
+      .updates .two {
+        display: flex;
+        flex-direction: column;
+
+        height: 30%;
+        width: 30%;
+      }
+
+      .updates .three {
+        display: flex;
+        flex-direction: column;
+
+        height: 30%;
+        width: 30%;
+      }
+
+      .updates .four {
+        display: flex;
+        flex-direction: column;
+
+        height: 30%;
+        width: 30%;
+      }
+
+      .updates .five {
+        display: flex;
+        flex-direction: column;
+
+        height: 30%;
+        width: 30%;
+      }
+
+      .updates .six {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        width: 30%;
+      }
+
+      .updates .seven {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        width: 30%;
+      }
+
+      .updates .eight {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        width: 30%;
+      }
+
+      .updates .nine {
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+      }
+
+      .img {
+        height: 60%;
+      }
+
+      .post {
+        padding-top: 10%;
+        display: flex;
+        gap: 3%;
+        
+        flex-direction: column;
+      }
+
+      .post p {
+        line-height: 140%;
+        height: fit-content;
+      }
+
+      .post span {
+        color: #48487f;
+      }
+
+      .viewall {
+        height: 40%;
+        width: 90%;
+        
+        margin: auto;
+        display: flex;
+        gap: 7%;
+        margin-top: 4%;
+      }
+
+      .view {
+        height: 100%;
+        width: 33%;
+        margin: auto;
+        gap: 20%;
+        display: flex;
+
+        flex-direction: column;
+      }
+      #conthree {
+        margin-left: 7%;
+      }
+      .star {
+        height: 80%;
+        width: 150%;
+      }
+
+      .view span {
+        display: inline-block;
+        position: relative;
+        top: 8px;
+        width: 100%;
+        height: fit-content;
+        margin-top: 0.5%;
+      }
+
+      .comment {
+        height: fit-content;
+        width: 100%;
+       
+        display: flex;
+      }
+
+      .dot {
+        margin-top: 7%;
+        height: fit-content;
+        width: fit-content;
+        margin-left: 10%;
+        gap: 1px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 10%;
+      }
+
+      .dotone {
+        background: rgb(26, 25, 25);
+        height: 6px;
+        border-radius: 50%;
+        width: 5px;
+      }
+
+      .dottwo {
+        background: rgb(26, 25, 25);
+        height: 6px;
+        border-radius: 50%;
+        width: 5px;
+      }
+
+      .dotthree {
+        background: rgb(26, 25, 25);
+        height: 6px;
+        border-radius: 50%;
+        width: 5px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #48487f;
+      }
+
+      .para {
+        height: fit-content;
+      }
+
+      .rotatex {
+        transform: translateY(6px) rotateZ(45deg);
+      }
+
+      .rotatey {
+        transform: translateY(-6px) rotateZ(-45deg);
+      }
+
+      .invisible {
+        opacity: 0;
+      }
+
+      .dis {
+        width: 40%;
+        height: 100vh;
+      }
+
+      .notdis {
+        width: 0%;
+        height: 100vh;
+      }
+
+      .none {
+        width: 50px;
+        height: 300px;
+        color: #48487f;
+        font-size: 20px;
+        font-weight: lighter;
+        margin: auto;
+        margin-top: 110px;
+        display: flex;
+        flex-direction: column;
+        transition: all 200ms;
+      }
+
+      .notul {
+        color: #48487f;
+        font-size: 20px;
+        font-weight: lighter;
+        margin: auto;
+        margin-top: 110px;
+        display: flex;
+        flex-direction: column;
+        width: 0px;
+
+        overflow: hidden;
+        height: 300px;
+        transition: all 200ms;
+      }
+
+      .gallery {
+        height: fit-content;
+        width: 90%;
+        
+        margin: auto;
+        display: flex;
+
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .gallery img {
+        width: 288px;
+        height: 280px;
+      }
+      .bot {
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 5vh;
+       
+        overflow: hidden;
+        font-size: 20px;
+        color: #48487f;
+        list-style: none;
+        top: 95vh;
+        left: 0;
+        background: white;
+        z-index: 1;
+        font-weight: bolder;
+        box-shadow: 0px 0px 5px;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .bot li {
+        text-align: center;
+        width: fit-content;
+
+        height: fit-content;
+      }
+      .up {
+        margin: auto;
+      }
+      #write {
+        width: 30%;
+      }
+
+      @media only screen and (max-width: 1000px) {
+        .bgimage {
+          background-repeat: no-repeat;
+        }
+        header {
+          height: 5%;
+        }
+        #write {
+          width: 100%;
+        }
+        .up {
+          margin-top: -50%;
+        }
+        .bot {
+          display: flex;
+        }
+        .u {
+          display: none;
+        }
+        .get {
+          height: 20px;
+        }
+        .updates {
+          align-items: center;
+        }
+        .one {
+          margin-top: -40%;
+        }
+        .two {
+          margin-top: -40%;
+        }
+        .three {
+          margin-top: -40%;
+        }
+        .four {
+          margin-top: -130%;
+        }
+        .five {
+          margin-top: -130%;
+        }
+        .six {
+          margin-top: -130%;
+        }
+        .seven {
+          margin-top: -160%;
+        }
+        .eight {
+          margin-top: -160%;
+        }
+        .nine {
+          margin-top: -160%;
+        }
+        #view {
+          margin-top: -90%;
+        }
+        #ul {
+          width: 50%;
+        }
+        .hamburger{
+          display: flex;
+        }
+        header ul{
+          display: none;
+        }
+        .logo{
+          margin-left: 20px;
+        }
+      }
+  
+      @media only screen and (max-width: 600px) {
+        header {
+          height: 5%;
+        }
+        .hamburger{
+          display: flex;
+        }
+        header ul{
+          display: none;
+        }
+        .logo{
+          margin-left: 40px;
+        }
+        #write {
+          width: 100%;
+        }
+        .bgimage {
+          background-repeat: no-repeat;
+        }
+        .viewall {
+          flex-direction: column;
+          gap: 80px;
+        }
+        .viewall .view {
+          width: 100%;
+        }
+        .logo p {
+          font-size: 20px;
+        }
+        .bot {
+          display: flex;
+        }
+
+        .u {
+          display: none;
+        }
+        .updates {
+          align-items: center;
+        }
+        .up {
+          margin-top: -50%;
+        }
+        .one {
+          margin-top: -40%;
+        }
+        .two {
+          margin-top: -40%;
+        }
+        .three {
+          margin-top: -40%;
+        }
+
+        .four {
+          margin-top: -130%;
+        }
+        .five {
+          margin-top: -130%;
+        }
+        .six {
+          margin-top: -130%;
+        }
+        .seven {
+          margin-top: -140%;
+        }
+        .eight {
+          margin-top: -140%;
+        }
+        .nine {
+          margin-top: -140%;
+        }
+
+        #ul {
+          width: 50%;
+        }
+        #view {
+          margin-top: -70%;
+        }
+        #con {
+          flex-direction: column;
+          gap: 20px;
+        }
+        #con #conthree {
+          margin-left: 0;
+        }
+        .get {
+          height: 10px;
+        }
+      }
+      button,a{
+        cursor: pointer;
+      }
+      .get_quote {
+        width: 100vw;
+        height: 300vh;
+        background: rgba(24, 23, 23, 0.5);
+        top: 0%;
+        left: 0%;
+        transition: all 1s;
+        z-index: 6;
+        display: none;
+        position: absolute;
+      }
+      .getq {
+        width: 500px;
+        height: 400px;
+        margin: 33vh auto;
+        background: rgb(255, 255, 255);
+        text-align: center;
+        opacity: 1;
+      }
+      .getq P {
+        height: fit-content;
+      }
+      .getq button{
+        width: 100px;
+        background-color: #4285F4;
+        height: 40px;
+        border: none;
+        margin: 30px 0px 0px 300px;
+        border-radius: 3px;
+        color: white;
+        padding: 2%;
+        font-size: 15px;
+      }
+      .getq input {
+        width: 80%;
+        font-size: 18px;
+        font-weight: lighter;
+        border-right: none;
+        border-left: none;
+        border-bottom: 0.5px solid rgb(197, 191, 191);
+        border-top: none;
+        transition: all 400ms;
+        outline: none;
+        height: 10%;
+      }
+
+      .getq input:focus {
+        border-bottom: 1px solid #4285f4;
+        padding-bottom: 3%;
+        font-size: 15px;
+      }
+      .u{
+     
+        width:60%;
+        margin-left: 15%;
+     justify-content: space-between;
+      }
+      .u li{
+      
+        width:fit-content ;
+        font-size: 17px;
+      }
+      .u a:hover{
+        color: rgb(48, 194, 73);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="get_quote" id="get_quote">
+      <div class="getq">
+        <div
+          id="cross"
+          style="
+            width: 20px;
+            position: relative;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            left: 90%;
+            top: 5%;
+            justify-content: center;
+          "
+        >
+          <div
+            style="
+              width: 100%;
+              height: 1%;
+              background: rgb(134, 130, 130);
+              transform: rotateZ(45deg);
+            "
+          ></div>
+          <div
+            style="
+              width: 100%;
+              height: 1%;
+              background: rgb(100, 96, 96);
+              transform: rotateZ(-45deg);
+            "
+          ></div>
+        </div>
+        <br />
+        <p>Get Quote</p>
+        <br /><br /><br />
+        <input type="text" placeholder="Name" required /><br />
+        <br /><br />
+        <input
+          type="text"
+          placeholder="Phone Number"
+          required
+        /><br /><br /><br />
+        <input type="email" placeholder="Email *" required /><br>
+         <button >SUBMIT</button>
+
+      </div>
+    </div>
+ 
+    <div
+      style="
+        background: white;
+        z-index: 1;
+        position: fixed;
+        top: 0px;
+        left: 0;
+        box-shadow: 0px 0px 5px;
+        transition: all 400ms;
+      "
+      id="side"
+      class="notdis"
+    >
+      <ul id="ul" class="notul" style="width: 40%">
+        <li style="background-color: #afafaf65;border-radius: 5px;"><a href="#">Home</a></li>
+        <li><a href="Courses.html">Courses</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="form.html">Register Online</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div
+      style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%"
+    >
+      <header>
+        <div class="hamburger">
+          <div class="oneline"></div>
+          <div class="twoline"></div>
+          <div class="threeline"></div>
+        </div> 
+
+        <div class="logo">
+          <p>Batra Computer Center</p>
+        </div>
+        <ul class="u">
+          <li style="background-color: #afafaf65;border-radius: 5px;"><a href="#">Home</a></li>
+          <li><a href="Courses.html">Courses</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="form.html">Register Online</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </header>
+
+      <div class="section1" style="z-index: -2">
+        <h1>Batra Computer Center</h1>
+        <p>
+          Computer Training School Ambala Cantt<br />Open today until 8:00 PM
+        </p>
+        <button class="get" id="quote">GET QUOTE</button>
+      </div>
+      <br /><br /><br /><br />
+      <div class="bgimage"></div>
+      <br /><br /><br /><br /><br />
+      <div style="background: black; width: 6%; height: 0.3%" class="up"></div>
+      <br />
+      <h1
+        style="
+          text-align: center;
+          color: rgb(65, 64, 64);
+          font-family: sans-serif;
+          font-size: 20px;
+          font-weight: 100;
+          height: fit-content;
+        "
+        id="update"
+      >
+        UPDATES
+      </h1>
+      <br /><br /><br />
+      <div class="updates">
+        <div class="one">
+          <div class="img"><img src="one.jpg" alt="" /></div>
+          <div class="post">
+            <p>
+              <span>Posted on Nov 22, 2021</span><br />
+              new batches starts Basic<br />computer &web Designing<br /><br /><span
+                style="color: #48487f; font-weight: bolder"
+                >CALL NOW</span
+              >
+            </p>
+            <div
+              style="
+                background: #48487f;
+                margin-left: 1%;
+                width: 31%;
+                height: 0.6%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="two">
+          <div class="img"><img src="two.jpg" alt="" /></div>
+          <div class="post">
+            <p>
+              <span>Posted on Nov 22, 2021</span><br />
+              new batches starts Basic<br />computer &web Designing<br /><br /><span
+                style="color: #48487f; font-weight: bolder"
+                >CALL NOW</span
+              >
+            </p>
+            <div
+              style="
+                background: #48487f;
+                margin-left: 1%;
+                width: 31%;
+                height: 0.6%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="three">
+          <div class="img"><img src="three.jpg" alt="" /></div>
+          <div class="post">
+            <p>
+              <span>Posted on Nov 22, 2021</span><br />
+              new batches starts Basic<br />computer &web Designing<br /><br /><span
+                style="color: #48487f; font-weight: bolder"
+                >CALL NOW</span
+              >
+            </p>
+            <div
+              style="
+                background: #48487f;
+                margin-left: 1%;
+                width: 31%;
+                height: 0.6%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="four">
+          <div class="img"><img src="four.jpg" alt="" /></div>
+          <div class="post">
+            <p>
+              <span>Posted on Nov 22, 2021</span><br />
+              new batches starts Basic<br />computer &web Designing<br /><br /><span
+                style="color: #48487f; font-weight: bolder"
+                >CALL NOW</span
+              >
+            </p>
+            <div
+              style="
+                background: #48487f;
+                margin-left: 1%;
+                width: 31%;
+                height: 0.6%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="five">
+          <div class="img"><img src="five.jpg" alt="" /></div>
+          <div class="post">
+            <p>
+              <span>Posted on Nov 22, 2021</span><br />
+              new batches starts Basic<br />computer &web Designing<br /><br /><span
+                style="color: #48487f; font-weight: bolder"
+                >CALL NOW</span
+              >
+            </p>
+            <div
+              style="
+                background: #48487f;
+                margin-left: 1%;
+                width: 31%;
+                height: 0.6%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="six">
+          <div class="img"><img src="six.jpg" alt="" /></div>
+          <div class="post">
+            <p>
+              <span>Posted on Nov 22, 2021</span><br />
+              new batches starts Basic<br />computer &web Designing<br /><br /><span
+                style="color: #48487f; font-weight: bolder"
+                >CALL NOW</span
+              >
+            </p>
+            <div
+              style="
+                background: #48487f;
+                margin-left: 1%;
+                width: 31%;
+                height: 0.6%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="seven">
+          <div class="img"><img src="seven.jpg" alt="" /></div>
+          <div class="post">
+            <p>
+              <span>Posted on Nov 22, 2021</span><br />
+              new batches starts Basic<br />computer &web Designing<br /><br /><span
+                style="color: #48487f; font-weight: bolder"
+                >CALL NOW</span
+              >
+            </p>
+            <div
+              style="
+                background: #48487f;
+                margin-left: 1%;
+                width: 31%;
+                height: 0.6%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="eight">
+          <div class="img"><img src="eight.jpg" alt="" /></div>
+          <div class="post">
+            <p>
+              <span>Posted on Nov 22, 2021</span><br />
+              new batches starts Basic<br />computer &web Designing<br /><br /><span
+                style="color: #48487f; font-weight: bolder"
+                >CALL NOW</span
+              >
+            </p>
+            <div
+              style="
+                background: #48487f;
+                margin-left: 1%;
+                width: 31%;
+                height: 0.6%;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="nine">
+          <div class="img"><img src="nine.jpg" alt="" /></div>
+          <div class="post">
+            <p>
+              <span>Posted on Nov 22, 2021</span><br />
+              new batches starts Basic<br />computer &web Designing<br /><br /><span
+                style="color: #48487f; font-weight: bolder"
+                >CALL NOW</span
+              >
+            </p>
+            <div
+              style="
+                background: #48487f;
+                margin-left: 1%;
+                width: 31%;
+                height: 0.6%;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+      <h2
+        style="
+          color: #48487f;
+          height: fit-content;
+          text-align: center;
+          font-size: 17px;
+        "
+        id="view"
+      >
+        VIEW ALL
+      </h2>
+      <br />
+      <div
+        style="background: #48487f; width: 7.5%; height: 0.2%; margin: auto"
+      ></div>
+      <br /><br />
+      <div
+        style="background: black; width: 5%; height: 0.3%; margin: auto"
+      ></div>
+      <br />
+      <h1
+        style="
+          text-align: center;
+          color: rgb(63, 61, 61);
+          font-size: 20px;
+          font-weight: 500;
+          height: fit-content;
+        "
+        id="test"
+      >
+        TESTIMONIALS
+      </h1>
+      <br />
+      <div class="viewall">
+        <div class="view">
+          <div class="comment">
+            <div class="star">
+              <svg
+                class="Pmm3mc"
+                style="fill: rgb(241, 241, 22); height: 30px; width: 30px"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+            </div>
+            <span style="color: rgb(109, 108, 108)">a month ago</span>
+            <div class="dot">
+              <div class="dotone"></div>
+              <div class="dottwo"></div>
+              <div class="dotthree"></div>
+            </div>
+          </div>
+          <div class="para">
+            <pre>"One of the best training institutes I 
+  have done. The trainer did a great
+  job in covering the course material."
+    
+   <span style="color:#48487f;font-weight: bolder;font-size: 20px;">- Tanu M</span></pre>
+          </div>
+        </div>
+        <div class="view">
+          <div class="comment">
+            <div class="star">
+              <svg
+                class="Pmm3mc"
+                style="fill: rgb(241, 241, 22); height: 30px; width: 30px"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+            </div>
+            <span style="color: rgb(109, 108, 108)">a month ago</span>
+            <div class="dot">
+              <div class="dotone"></div>
+              <div class="dottwo"></div>
+              <div class="dotthree"></div>
+            </div>
+          </div>
+          <div class="para">
+            <pre>"One of the best training institutes I 
+ have done. The trainer did a great  
+ job in covering the course material."
+    
+     <span style="color:#48487f;font-weight: bolder;font-size: 20px;">- Tanu M</span></pre>
+          </div>
+        </div>
+        <div class="view">
+          <div class="comment">
+            <div class="star">
+              <svg
+                class="Pmm3mc"
+                style="fill: rgb(241, 241, 22); height: 30px; width: 30px"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+              <svg
+                class="Pmm3mc"
+                style="
+                  fill: rgb(241, 241, 22);
+                  height: 30px;
+                  width: 30px;
+                  margin-left: -9px;
+                "
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+              </svg>
+            </div>
+            <span style="color: rgb(109, 108, 108)">a month ago</span>
+            <div class="dot">
+              <div class="dotone"></div>
+              <div class="dottwo"></div>
+              <div class="dotthree"></div>
+            </div>
+          </div>
+          <div class="para">
+            <pre>"One of the best training institutes I 
+  have done. The trainer did a great
+  job in covering the course material."
+    
+     <span style="color:#48487f;font-weight: bolder;font-size: 20px;">- Tanu M</span></pre>
+          </div>
+        </div>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br />
+      <div
+        style="
+          height: 10%;
+
+          display: flex;
+          flex-wrap: wrap;
+          margin: auto;
+          justify-content: center;
+          gap: 5%;
+
+          color: #48487f;
+          font-weight: bolder;
+          margin-top: -30%;
+        "
+        id="write"
+      >
+        <div style="width: 170px; height: fit-content">WRITE A REVIEW</div>
+        <div style="margin-left: 2%; width: fit-content; height: fit-content">
+          READ MORE
+        </div>
+        <div
+          style="margin-left: 2%; background: #48487f; width: 43%; height: 3.1%"
+        ></div>
+        <div
+          style="margin-left: 2%; background: #48487f; height: 3.1%; width: 32%"
+        ></div>
+      </div>
+      <br />
+      <div
+        style="width: 7%; height: 0.3%; background: black; margin: 0px 48.5%"
+      ></div>
+      <br />
+      <h1
+        style="
+          text-align: center;
+          margin-left: 2%;
+          color: rgb(54, 52, 52);
+          font-weight: lighter;
+          font-size: 29px;
+          height: fit-content;
+        "
+        id="gallery"
+      >
+        Gallery
+      </h1>
+      <br /><br />
+      <div class="gallery">
+        <img src="g1.jpg" alt="" /><img src="g2.jpg" alt="" /><img
+          src="g3.jpg"
+          alt=""
+        /><img src="g4.jpg" alt="" /><img src="g5.jpg" alt="" /><img
+          src="g6.jpg"
+          alt=""
+        /><img src="g7.jpg" alt="" /><img src="g8.jpg" alt="" /><img
+          src="g9.jpg"
+          alt=""
+        />
+      </div>
+      <br /><br /><br />
+      <div
+        style="background: black; width: 8%; height: 0.3%; margin: auto"
+      ></div>
+      <br />
+      <h1
+        style="
+          font-weight: lighter;
+          font-size: 22px;
+          color: rgb(66, 65, 65);
+          text-align: center;
+          height: fit-content;
+        "
+        id="contact"
+      >
+        CONTACT US
+      </h1>
+      <br />
+      <div
+        class="contact"
+        style="width: 90%; margin: auto; height: fit-content"
+      >
+        <a
+          href="https://www.google.com/maps/place/Batra+Computer+Center/data=!3m1!4b1!4m2!3m1!1s0x390fb65f75289e05:0x678c7b1e52bdb5cf"
+          target="_blank"
+          ><img src=" map.jpg" alt=""
+        /></a>
+      </div>
+      <br /><br />
+      <div
+        style="width: 85%; height: fit-content; display: flex; margin: auto"
+        id="con"
+      >
+        <div style="width: 33%; height: fit-content">
+          <h1 style="font-size: 20px; color: rgb(39, 38, 38)">Contact</h1>
+          <br />
+          <button
+            style="
+              background-color: #48487f;
+              color: white;
+              width: 65%;
+              height: 70px;
+              border: none;
+              font-size: 18px;
+              border-radius: 2px;
+            "
+          >
+            CALL NOW</button
+          ><br /><br />
+          <p>0972966670</p>
+        </div>
+        <div style="width: 33%; height: fit-content">
+          <h1 style="font-size: 20px; color: rgb(39, 38, 38)">Address</h1>
+          <br />
+          <button
+            style="
+              background-color: #48487f;
+              color: white;
+              width: 80%;
+              height: 70px;
+              border: none;
+              font-size: 18px;
+              border-radius: 2px;
+            "
+          >
+            <a
+              href="https://www.google.com/maps/place/Batra+Computer+Center/data=!3m1!4b1!4m2!3m1!1s0x390fb65f75289e05:0x678c7b1e52bdb5cf"
+              style="color: white"
+              target="_blank"
+            >
+              GET DIRECTIONS</a
+            ></button
+          ><br /><br />
+          <pre>
+15 Dayal Bagh Near Hanuman Mandir
+Ambala Cantt, Haryana 133001
+India</pre
+          >
+        </div>
+        <div style="width: 33%; height: fit-content" id="conthree">
+          <h1 style="font-size: 20px; color: rgb(39, 38, 38)">
+            Business Hours
+          </h1>
+          <br />
+          <pre>
+Mon:	9:00 AM – 8:00 PM
+Tue:	9:00 AM – 8:00 PM
+Wed:	9:00 AM – 8:00 PM
+Thu:	9:00 AM – 8:00 PM
+Fri:	9:00 AM – 8:00 PM
+Sat:	9:00 AM – 8:00 PM
+Sun:	9:00 AM – 8:00 PM
+    </pre
+          >
+        </div>
+      </div>
+      <br /><br /><br />
+      <br />
+      <div
+        style="
+          width: 90%;
+          height: 0.2%;
+          background: rgb(156, 154, 154);
+          margin: auto;
+        "
+      ></div>
+      <br />
+      <pre
+        style="
+          color: rgb(156, 154, 154);
+          font-size: 15px;
+          font-weight: 100;
+          height: 10%;
+        "
+      >
+              Report abuse                                                      Header photo by Batra Computer Center                                              Powered by Google
+  
+  
+  
+  </pre
+      >
+      <br />
+    </div>
+
+    <script>
+      const hamburger = document.getElementsByClassName("hamburger")[0];
+      const get_quote = document.getElementById("get_quote");
+      const cross = document.getElementById("cross");
+      const quote = document.getElementById("quote");
+      const body=document.querySelector('body');
+      let i = 0;
+      const one = document.getElementsByClassName("oneline")[0];
+      const three = document.getElementsByClassName("threeline")[0];
+      const two = document.getElementsByClassName("twoline")[0];
+      const side = document.getElementById("side");
+      const ul = document.getElementById("ul");
+
+      hamburger.addEventListener("click", () => {
+        one.classList.toggle("rotatex");
+        two.classList.toggle("invisible");
+        three.classList.toggle("rotatey");
+
+        if (i % 2 == 0) {
+          side.classList.remove("notdis");
+          side.classList.add("dis");
+          ul.classList.add("none");
+          ul.classList.remove("notul");
+        } else {
+          side.classList.remove("dis");
+          side.classList.add("notdis");
+          ul.classList.remove("none");
+          ul.classList.add("notul");
+        }
+        i++;
+       });
+
+      quote.addEventListener("click", () => {
+        get_quote.style.display = "block";
+        body.style.overflow="hidden";
+      });
+
+      cross.addEventListener("click", () => {
+        get_quote.style.display = "none";
+        body.style.overflow="visible";
+      });
+    </script>
+  </body>
+</html>
